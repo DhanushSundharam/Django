@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static%}
+    <head>
+        <meta charset="UTF-8">
+        <title>NextAI</title>
+        <link rel='shortcut icon' href="{%static 'images\favicon.ico' %}">
+        <link rel="stylesheet" href="{% static 'css\style.css'%}">
+    </head>
+    <body>
+        <p>{{generate_texted}}</p>
+        
+        <div class="preloader">
+            <p class="loading-text">NextAI</p>
+        </div>
+        <section class="side-bar">
+            <button >New Chat</button>
+            <div class="history"></div>
+            <h4></h4>
+            <div class="nav">
+                <p class="nav2">Made by NextAI</p>
+            </div>
+        </section>
+        <section class="main">
+            <h1 class="tagger">NextAI</h1>
+            <p id="output"></p>
+            <form id="chat-form" method="post">
+                
+            <div class="bottom-section">
+                {% csrf_token %}
+                <div class="input-container">
+                    
+                    <input class="NextAI1" id="message-input" type="text" placeholder="Type your message...">
+                    <button id="submit" type="submit">➢</button>
+                    
+
+                </div>
+            </form>
+            </div>
+            <footer class="fo">
+            <p class="info">&nbsp;&nbsp;&nbsp;Free Research Preview. NextAI may produce inaccurate information about people, places, or facts. ChatGPT August 3 Version
+            </p>
+        </footer>
+
+        </section>
+        <script>
+            // JavaScript code to hide the preloader after 3 seconds
+            setTimeout(function() {
+                var preloader = document.querySelector('.preloader');
+                preloader.style.display = 'none';
+            }, 5000); // Hide preloader after 3 seconds (3000 milliseconds)
+        </script>
+        
+    </body>
+</html>
